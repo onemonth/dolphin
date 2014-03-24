@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Dolphin::Application.config.secret_key_base = '1c0d34d0f86cde7eb0fd528a8aa0764cbb2741bdd6a5295cd488d140b8d3269e47cb3e485bdac423769fa3436d0fbb038cca1d58922a7f4763356cba14a751b2'
+Dolphin::Application.config.secret_key_base = ENV['SECRET_TOKEN']

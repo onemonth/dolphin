@@ -1,0 +1,15 @@
+<h1>HOME</h1>
+
+<pre><%= @info.to_yaml %> </pre>
+
+<% if session[:heroku_token] %>
+  <%= link_to 'logout', '/logout' %>
+<% else %>
+  <%= link_to 'login', '/auth/heroku' %>
+<% end %>
+
+<div>
+  <% @apps.each do |app| %>
+    <%= link_to app["name"], app["web_url"] %> <br/>
+  <% end %>
+</div>
