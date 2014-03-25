@@ -1,15 +1,31 @@
-<h1>HOME</h1>
+<div class="container">
 
-<pre><%= @info.to_yaml %> </pre>
+  <div class="jumbotron">
+    <h1>Dolphin App Creator</h1>
+    <p class="lead">One Click install of the Doliphin App Creator into your own heroku account!</p>
+    <p>
+      <% if @app_info %>
+        <h2>Yay Installed!<h2>
+        <%= render partial: 'app_info', object: @app_info %>
+      <% else %>
+      <a class="btn btn-lg btn-success" href="/auth/heroku" role="button">Install!</a>
+      <% end %>
+    </p>
+  </div>
 
-<% if session[:heroku_token] %>
-  <%= link_to 'logout', '/logout' %>
-<% else %>
-  <%= link_to 'login', '/auth/heroku' %>
-<% end %>
+  <div class="row marketing">
+    <div class="col-lg-6">
+      <h4>One Click</h4>
+      <p>You know it</p>
+    </div>
 
-<div>
-  <% @apps.each do |app| %>
-    <%= link_to app["name"], app["web_url"] %> <br/>
-  <% end %>
+    <div class="col-lg-6">
+      <h4>Have all this all your own</h4>
+      <p>Install it into your heroku today!</p>
+    </div>
+  </div>
 </div>
+
+<% if @debug %>
+ <pre><%= @debug.to_yaml %></pre>
+<% end %>

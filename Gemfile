@@ -14,6 +14,9 @@ gem 'heroku-api'
 gem 'omniauth'
 gem 'omniauth-heroku'
 
+# git
+gem "git"
+
 group :development, :test do
   gem 'debugger'
   gem 'better_errors'
